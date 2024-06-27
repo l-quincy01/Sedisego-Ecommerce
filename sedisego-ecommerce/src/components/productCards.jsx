@@ -1,9 +1,13 @@
 import { CiHeart } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 export default function ProductCards() {
   return (
     <div className="grid grid-cols-4 gap-y-20 ">
-      <div className=" border border-y-0 border-l-0 border-r-1 border-gray-500 px-5 flex flex-col  items-center justify-center">
+      <Link
+        to={"/product"}
+        className=" border border-y-0 border-l-0 border-r-1 border-gray-500 px-5 flex flex-col  items-center justify-center"
+      >
         <img
           className=" object-cover relative  aspect-rectangle duration-700 ease-in-out hover:scale-105"
           src="https://www.weylandts.co.za/media/wysiwyg/5._Carpets__708x708_1.jpg?auto=webp&format=pjpg&quality=85"
@@ -17,7 +21,8 @@ export default function ProductCards() {
           </div>
           <CiHeart size={24} />
         </div>
-      </div>
+      </Link>
+
       <div className=" border border-y-0 border-l-0 border-r-1 border-gray-500 px-5 flex flex-col  items-center justify-center">
         <img
           className=" object-cover relative  aspect-rectangle duration-700 ease-in-out hover:scale-105"

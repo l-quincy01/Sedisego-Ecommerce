@@ -1,6 +1,7 @@
 import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
@@ -8,7 +9,7 @@ export default function Footer() {
       <div className="flex flex-row p-10  justify-between items-center">
         <div className="flex flex-col">
           <div>Call us today:</div>
-          <div>+27 11 123 4567</div>
+          <div>+27 82 90 777 05</div>
         </div>
 
         <div className="flex flex-col space-y-6">
@@ -39,6 +40,7 @@ export default function Footer() {
             <FaLinkedin className="cursor-pointer" />
             <FaInstagram className="cursor-pointer" />
             <FaFacebook className="cursor-pointer" />
+            <MdEmail className="cursor-pointer" />
           </div>
         </div>
       </div>
