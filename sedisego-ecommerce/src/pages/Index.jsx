@@ -16,8 +16,9 @@ export default function Index() {
           <FurnitureGallery />
         </div>
         <div className="mt-20  ">
-          <div className="text-black font-light mt-10 text-2xl">
-            New Arrivals
+          <div className="flex flex-row items-center justify-between mt-10">
+            <div className="text-black font-light  text-2xl">New Arrivals</div>
+            <div className=" text-sm underline cursor-pointer">View All</div>
           </div>
           <div className="mt-20 ">
             <ProductCards />

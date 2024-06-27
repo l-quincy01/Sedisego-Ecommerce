@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div className="bg-slate-900 text-white p-5">
+    <div className="bg-gray-900 text-white p-5">
       <div className="flex flex-row p-10  justify-between items-center">
         <div className="flex flex-col">
           <div>Call us today:</div>
