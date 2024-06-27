@@ -10,12 +10,12 @@ function Layout() {
       <div className="">
         <header>
           <Header />
-          <HeaderBackground />
+          <HeaderBackground className="mb-5" />
         </header>
-        <main>
+        <main className=" mt-10 p-20">
           <Outlet />
         </main>
-        <footer>
+        <footer className="mt-10 ">
           <Footer />
         </footer>
       </div>
