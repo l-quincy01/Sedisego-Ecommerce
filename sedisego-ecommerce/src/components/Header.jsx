@@ -103,13 +103,13 @@ export default function Header() {
             {/* Navbar */}
             <ul className="DESKTOP-MENU bg-transparent  hidden space-x-8 lg:flex  ">
               <li>
-                <a href="/about">About</a>
+                <a href="/about">SALE</a>
               </li>
               <li>
-                <a href="/portfolio">Portfolio</a>
+                <a href="/portfolio">PROJECTS</a>
               </li>
               <li>
-                <a href="/contact">Contact</a>
+                <a href="/contact">SERVICES</a>
               </li>
             </ul>
           </nav>
