@@ -1,11 +1,14 @@
-export default function HeaderBackground() {
+import PropTypes from "prop-types";
+
+export default function HeaderBackground({ bannerImage }) {
   return (
-    <div
-      className=" bg-center bg-no-repeat h-3/4 w-full absolute top-0 -z-10"
-      style={{
-        backgroundImage:
-          " linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.weylandts.co.za/media/cms/header/Homepage_Mobile_Banner__750x784_3_.jpg')",
-      }}
-    ></div>
+    <div className="bg-center bg-no-repeat h-3/4 w-full absolute top-0 -z-10 justify-center items-center">
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <img className="w-full h-full object-cover" src={bannerImage} alt="" />
+    </div>
   );
 }
+
+HeaderBackground.propTypes = {
+  bannerImage: PropTypes.string.isRequired,
+};

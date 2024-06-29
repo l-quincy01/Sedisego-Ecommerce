@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react"; // import state
-import { CiMenuBurger } from "react-icons/ci";
+import sedisegoLogoLight from "../assets/sedisego-logo-Light.png";
+import sedisegoLogoDark from "../assets/sedisego-logo-Dark.png";
 
 export default function Header() {
   const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
@@ -44,14 +45,14 @@ export default function Header() {
 
     </div> */}
 
-      <div className=" bg-cover bg-center  flex items-center justify-between  py-16 px-10 text-white ">
+      <div className=" h-1/2 w-full bg-transparent flex items-center justify-between mt-20 px-10 text-white ">
         <div className=" border border-r-0 border-l-0  border-t-1 border-b-1 border-white p-7 flex flex-row items-center">
           {/* Logo */}
           <a href="/">
             <img
-              className="w-1/5"
-              src="https://res.cloudinary.com/ddbbsotsg/image/upload/v1625303038/sedisego/sedisego-logo-nav-light_uk8bhj.png"
-              alt=""
+              className="w-1/5 "
+              src={sedisegoLogoLight}
+              alt="Sedisego Logo"
             />
           </a>
 
@@ -88,10 +89,10 @@ export default function Header() {
                 </div>
                 <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] text-white">
                   <li className="border-b border-gray-400 my-8 uppercase text-white">
-                    <a href="/about">About</a>
+                    <a href="/about">SALE</a>
                   </li>
                   <li className="border-b border-gray-400 my-8 uppercase text-white">
-                    <a href="/portfolio">Portfolio</a>
+                    <a href="/portfolio">PROJECTS</a>
                   </li>
                   <li className="border-b border-gray-400 my-8 uppercase text-white">
                     <a href="/contact">Contact</a>
