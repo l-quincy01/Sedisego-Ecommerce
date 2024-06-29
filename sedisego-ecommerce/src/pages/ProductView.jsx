@@ -2,7 +2,6 @@ import { CiHeart } from "react-icons/ci";
 import { FiMinus } from "react-icons/fi";
 import { FaPlus } from "react-icons/fa";
 import Carousel from "../components/carousel";
-import HeaderBackground from "../components/headerBackground";
 import { useState } from "react";
 
 export default function ProductView() {
@@ -27,17 +26,8 @@ export default function ProductView() {
   ];
   return (
     <>
-      <HeaderBackground
-        bannerImage={
-          "https://www.weylandts.co.za/media/catalog/category/Furniture_Homepage_Banner_Desktop_3200x1400_02_1_.jpg"
-        }
-        className="mb-5"
-      />
-      <div className="flex flex-col space-x-20 p-20">
-        <h1 className="text-white text-md md:text-4xl font-light flex items-center justify-center text-center mb-40">
-          Furniture
-        </h1>
-        <div className="flex flex-row items-start justify-center mt-40 space-x-10 ">
+      <div className="flex flex-col space-y-20 p-20 ">
+        <div className="flex flex-row items-start justify-center  space-x-10 mt-20 ">
           {/* Product Images */}
           <div className="space-y-5">
             <Carousel slides={productImages} />

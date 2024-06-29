@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import sedisegoLogoLight from "../assets/sedisego-logo-Light.png";
 import sedisegoLogoDark from "../assets/sedisego-logo-Dark.png";
 
-export default function Header() {
+export default function Header({ showOpaque = false }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(showOpaque);
 
   useEffect(() => {
+    if (showOpaque) return;
+
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setIsScrolled(true);
@@ -20,7 +22,7 @@ export default function Header() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [showOpaque]);
 
   return (
     <>
@@ -30,7 +32,7 @@ export default function Header() {
         }`}
       >
         <div
-          className={`px-16 flex flex-row items-center justify-between  h-1/2 w-full ${
+          className={`px-16 flex flex-row items-center justify-between h-1/2 w-full ${
             isScrolled ? "py-6 shadow-lg" : "py-10 mt-5"
           }`}
         >

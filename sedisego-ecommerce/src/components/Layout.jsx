@@ -1,19 +1,21 @@
-//import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
 function Layout() {
+  const location = useLocation();
+  const showOpaque = location.pathname === "/product"; // Adjust based on your routes
+
   return (
     <>
       <div className="">
         <header>
-          <Header />
+          <Header showOpaque={showOpaque} />
         </header>
-        <main className=" mt-10">
+        <main className="mt-10">
           <Outlet />
         </main>
-        <footer className="mt-10 ">
+        <footer className="mt-10">
           <Footer />
         </footer>
       </div>
