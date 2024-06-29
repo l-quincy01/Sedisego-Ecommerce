@@ -1,57 +1,44 @@
-import { useEffect } from "react";
-import { useState } from "react"; // import state
+import { useEffect, useState } from "react";
 import sedisegoLogoLight from "../assets/sedisego-logo-Light.png";
 import sedisegoLogoDark from "../assets/sedisego-logo-Dark.png";
 
 export default function Header() {
-  const [isNavOpen, setIsNavOpen] = useState(false); // initiate isNavOpen state with false
-
-  const [show, setShow] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
-
-  const controlNavbar = () => {
-    if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY) {
-        // if scrolling down, hide the navbar
-        setShow(false);
-      } else {
-        // if scrolling up, show the navbar
-        setShow(true);
-      }
-
-      // remember the current page location for the next move
-      setLastScrollY(window.scrollY);
-    }
-  };
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
-      // cleanup function
-      return () => {
-        window.removeEventListener("scroll", controlNavbar);
-      };
-    }
-  }, [lastScrollY]);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <>
-      {/* <div   className={`fixed w-full z-10 transition-transform duration-300 transform ${
-        show ? "translate-y-0" : "-translate-y-full  "
-      }`}>
-
-      FOR HEADER SCROLL ANIMATION
-
-    </div> */}
-
-      <div className=" h-1/2 w-full bg-transparent flex items-center justify-between mt-20 px-10 text-white ">
-        <div className=" border border-r-0 border-l-0  border-t-1 border-b-1 border-white p-7 flex flex-row items-center">
+      <div
+        className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
+          isScrolled ? "bg-white text-black" : "bg-transparent text-white"
+        }`}
+      >
+        <div
+          className={`px-16 flex flex-row items-center justify-between  h-1/2 w-full ${
+            isScrolled ? "py-6 shadow-lg" : "py-10 mt-5"
+          }`}
+        >
           {/* Logo */}
           <a href="/">
             <img
-              className="w-1/5 "
-              src={sedisegoLogoLight}
+              className="w-1/5"
+              src={isScrolled ? sedisegoLogoDark : sedisegoLogoLight}
               alt="Sedisego Logo"
             />
           </a>
@@ -61,18 +48,17 @@ export default function Header() {
             <section className="MOBILE-MENU flex lg:hidden">
               <div
                 className="HAMBURGER-ICON space-y-2"
-                onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click
+                onClick={() => setIsNavOpen((prev) => !prev)}
               >
-                <span className="block h-0.5 w-8 animate-pulse bg-white"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-white"></span>
-                <span className="block h-0.5 w-8 animate-pulse bg-white"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-current"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-current"></span>
+                <span className="block h-0.5 w-8 animate-pulse bg-current"></span>
               </div>
 
               <div className={isNavOpen ? "showMenuNav" : "hideMenuNav"}>
-                {" "}
                 <div
                   className="CROSS-ICON absolute top-0 right-0 px-8 py-8"
-                  onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
+                  onClick={() => setIsNavOpen(false)}
                 >
                   <svg
                     className="h-8 w-8 text-gray-600"
@@ -87,14 +73,14 @@ export default function Header() {
                     <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
                 </div>
-                <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px] text-white">
-                  <li className="border-b border-gray-400 my-8 uppercase text-white">
+                <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
+                  <li className="border-b border-gray-400 my-8 uppercase">
                     <a href="/about">SALE</a>
                   </li>
-                  <li className="border-b border-gray-400 my-8 uppercase text-white">
+                  <li className="border-b border-gray-400 my-8 uppercase">
                     <a href="/portfolio">PROJECTS</a>
                   </li>
-                  <li className="border-b border-gray-400 my-8 uppercase text-white">
+                  <li className="border-b border-gray-400 my-8 uppercase">
                     <a href="/contact">Contact</a>
                   </li>
                 </ul>
@@ -102,7 +88,7 @@ export default function Header() {
             </section>
 
             {/* Navbar */}
-            <ul className="DESKTOP-MENU bg-transparent  hidden space-x-8 lg:flex  ">
+            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
               <li>
                 <a href="/about">SALE</a>
               </li>
@@ -115,27 +101,27 @@ export default function Header() {
             </ul>
           </nav>
         </div>
-
-        <style>{`
-      .hideMenuNav {
-        display: none;
-      }
-      .showMenuNav {
-        display: block;
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        background: white;
-        z-index: 10;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-      }
-    `}</style>
       </div>
+
+      <style>{`
+        .hideMenuNav {
+          display: none;
+        }
+        .showMenuNav {
+          display: block;
+          position: absolute;
+          width: 100%;
+          height: 100vh;
+          top: 0;
+          left: 0;
+          background: white;
+          z-index: 10;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+        }
+      `}</style>
     </>
   );
 }

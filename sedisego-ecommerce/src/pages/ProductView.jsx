@@ -3,8 +3,22 @@ import { FiMinus } from "react-icons/fi";
 import { FaPlus } from "react-icons/fa";
 import Carousel from "../components/carousel";
 import HeaderBackground from "../components/headerBackground";
+import { useState } from "react";
 
 export default function ProductView() {
+  const [itemCount, setItemCount] = useState(1);
+
+  const increaseItemCount = () => {
+    if (itemCount < 5) {
+      setItemCount(itemCount + 1);
+    }
+  };
+  const decreaseItemCount = () => {
+    if (itemCount > 1) {
+      setItemCount(itemCount - 1);
+    }
+  };
+
   const productImages = [
     "https://www.weylandts.co.za/media/catalog/product/cache/e4162207ee7869f6b80ea9e5afe9bee9/7/e/7e0a792984b8c2d690a5828f0fa3cdc184de564f_I00005665_1_1.jpg?auto=webp&format=pjpg&width=1600&height=2000&fit=cover",
     "https://www.weylandts.co.za/media/catalog/product/cache/e4162207ee7869f6b80ea9e5afe9bee9/c/c/cc5ae3c6e36ca857146dc918d23740937a04cd45_I00005665_03_1_2.jpg?auto=webp&format=pjpg&width=640&height=800&fit=cover",
@@ -37,12 +51,18 @@ export default function ProductView() {
             </h1>
 
             <div className="flex flex-row space-x-4 items-center justify-center">
-              <div className="border border-black p-2">
+              <div
+                onClick={decreaseItemCount}
+                className="border border-black p-2 cursor-pointer"
+              >
                 <FiMinus />
               </div>
-              <div> 1</div>
+              <div> {itemCount}</div>
 
-              <div className="border border-black p-2">
+              <div
+                onClick={increaseItemCount}
+                className="border border-black p-2 cursor-pointer"
+              >
                 <FaPlus />
               </div>
             </div>

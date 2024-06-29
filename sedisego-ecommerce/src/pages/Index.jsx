@@ -13,7 +13,7 @@ export default function Index() {
         className="mb-5"
       />
 
-      <div className="flex flex-col space-y-20 p-20">
+      <div className="flex flex-col space-y-20 p-20 mt-64">
         <h1 className="text-white text-md md:text-4xl font-light flex items-center justify-center text-center mb-40">
           Our Handcrafted Selection
         </h1>
