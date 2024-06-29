@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import FurnitureGallery from "../components/furnitureGallery";
 import HeaderBackground from "../components/headerBackground";
 import ProductCards from "../components/productCards";
+import InteriorService from "../components/InteriorService";
 
 export default function Index() {
   return (
@@ -39,6 +40,9 @@ export default function Index() {
             </div>
             <div className="mt-20 ">
               <ProductCards />
+            </div>
+            <div className="mt-20 ">
+              <InteriorService />
             </div>
           </div>
         </div>

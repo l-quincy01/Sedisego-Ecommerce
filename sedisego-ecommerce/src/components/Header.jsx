@@ -123,7 +123,6 @@ export default function Header({ showOpaque = false }) {
                 <li>
                   <LuUser2 size={20} className="cursor-pointer" />
                 </li>
-
                 <li>
                   <SlBag size={20} className="cursor-pointer" />
                 </li>
