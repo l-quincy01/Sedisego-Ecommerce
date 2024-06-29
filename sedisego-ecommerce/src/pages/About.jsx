@@ -2,6 +2,30 @@ import FurnitureGallery from "../components/furnitureGallery";
 import HeaderBackground from "../components/headerBackground";
 
 export default function About() {
+  //gallery grid images
+  const images = [
+    {
+      src: "https://www.weylandts.co.za/media/wysiwyg/Homepage_Category_Blocks_-_Seating_1475x1475_.jpg?auto=webp&format=pjpg&quality=85",
+      text: "",
+    },
+    {
+      src: "https://www.weylandts.co.za/media/wysiwyg/Homepage_Category_Blocks_-_Bedroom_1475x1475_.jpg?auto=webp&format=pjpg&quality=85",
+      text: "",
+    },
+    {
+      src: "https://www.weylandts.co.za/media/wysiwyg/Homepage_Category_Blocks_-_Kitchen_1475x1475_.jpg?auto=webp&format=pjpg&quality=85",
+      text: "",
+    },
+    {
+      src: "https://www.weylandts.co.za/media/wysiwyg/4._Art_Mirrors__708x708_2_.jpg?auto=webp&format=pjpg&quality=85",
+      text: "",
+    },
+    {
+      src: "https://www.weylandts.co.za/media/wysiwyg/5._Carpets__708x708_1.jpg?auto=webp&format=pjpg&quality=85",
+      text: "",
+    },
+  ];
+
   return (
     <>
       <HeaderBackground
@@ -35,7 +59,7 @@ export default function About() {
             perfection.
           </div>
           <div className="mt-20 ">
-            <FurnitureGallery />
+            <FurnitureGallery images={images} />
           </div>
         </div>
         <div className="flex flex-row items-center justify-center space-x-8 text-black mt-20 ">
@@ -46,9 +70,10 @@ export default function About() {
               alt=""
             />
           </div> */}
-          <div className="flex flex-col items-center justify-center text-center space-y-6">
-            <h1 className=" font-extralight text-4xl md:text-4xl  flex items-center justify-center text-center ">
-              Our mission is to bring simplicity to modern interior design
+          <div className="flex flex-col items-center justify-center text-center space-y-6 p-20">
+            <h1 className=" font-extralight text-4xl md:text-5xl  flex items-center justify-center text-center ">
+              Our mission is to bring simplicity <br />
+              to modern interior design
             </h1>
           </div>
         </div>

@@ -13,6 +13,8 @@ export default function ProductCards() {
     "https://www.weylandts.co.za/media/catalog/product/cache/e4162207ee7869f6b80ea9e5afe9bee9/0/b/0ba3d701f2293a4c061777a63d2ee79d1e9004f7_I00007388__1__1.jpg?auto=webp&format=pjpg&width=1280&height=1600&fit=cover",
     "https://www.weylandts.co.za/media/catalog/product/cache/e4162207ee7869f6b80ea9e5afe9bee9/1/0/10ad7bcaba7356d6f123c264d1e9e4f2c81b4039_I00005107_1.jpg?auto=webp&format=pjpg&width=1280&height=1600&fit=cover",
     "https://www.weylandts.co.za/media/catalog/product/cache/e4162207ee7869f6b80ea9e5afe9bee9/e/8/e82fc135df9feeae1ab60d9aac763966eba6dede_I00003274__2__1.jpg?auto=webp&format=pjpg&width=1280&height=1600&fit=cover",
+    "https://www.weylandts.co.za/media/catalog/product/cache/e4162207ee7869f6b80ea9e5afe9bee9/0/7/07047922c3503d37c93c168d2e6a5acc8ed9f742_I00005665_1.jpg?auto=webp&format=pjpg&width=1280&height=1600&fit=cover",
+    "https://www.weylandts.co.za/media/wysiwyg/5._Carpets__708x708_1.jpg?auto=webp&format=pjpg&quality=85",
   ];
   return (
     <div className="grid grid-cols-4 gap-y-20">

@@ -4,7 +4,8 @@ import Footer from "./Footer";
 
 function Layout() {
   const location = useLocation();
-  const showOpaque = location.pathname === "/product"; // Adjust based on your routes
+  const showOpaque =
+    location.pathname === "/product" || location.pathname === "/Contact"; // Adjust based on your routes
 
   return (
     <>

@@ -45,7 +45,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t-2 border-white flex flex-row justify-between text-white p-10 ">
-        <div>© 2021 Sedisego Pty Ltd. All rights reserved</div>
+        <div>© 2024 Sedisego Pty Ltd. All rights reserved</div>
         <div>Pretoria, South Africa</div>
       </div>
     </div>

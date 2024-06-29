@@ -5,6 +5,7 @@ import { CiSearch } from "react-icons/ci";
 import { LuUser2 } from "react-icons/lu";
 import { SlBag } from "react-icons/sl";
 import { IoClose } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 export default function Header({ showOpaque = false }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -92,7 +93,7 @@ export default function Header({ showOpaque = false }) {
                     <a href="/about">SALE</a>
                   </li>
                   <li className="my-8 uppercase">
-                    <a href="/portfolio">PROJECTS</a>
+                    <a href="/portfolio">OUR WORKS</a>
                   </li>
                   <li className="my-8 uppercase">
                     <a href="/contact">Contact</a>
@@ -104,14 +105,14 @@ export default function Header({ showOpaque = false }) {
             {/* Navbar */}
             {!searchOn && (
               <ul className="DESKTOP-MENU hidden space-x-8 lg:flex items-center">
-                <li>
-                  <a href="/about">SALE</a>
+                <li className="uppercase">
+                  <Link to={"/Sale"}>SALE</Link>
                 </li>
-                <li>
-                  <a href="/portfolio">PROJECTS</a>
+                <li className="uppercase">
+                  <a href="/About">About</a>
                 </li>
-                <li>
-                  <a href="/contact">SERVICES</a>
+                <li className="uppercase">
+                  <a href="/Contact"> Contact</a>
                 </li>
                 <li>
                   <CiSearch
