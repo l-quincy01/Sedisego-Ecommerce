@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import sedisegoLogoLight from "../assets/sedisego-logo-Light.png";
 import sedisegoLogoDark from "../assets/sedisego-logo-Dark.png";
+import { CiSearch } from "react-icons/ci";
+import { LuUser2 } from "react-icons/lu";
+import { SlBag } from "react-icons/sl";
+import { IoClose } from "react-icons/io5";
 
 export default function Header({ showOpaque = false }) {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(showOpaque);
+  const [searchOn, setSearchOn] = useState(false);
 
   useEffect(() => {
     if (showOpaque) return;
@@ -28,22 +33,26 @@ export default function Header({ showOpaque = false }) {
     <>
       <div
         className={`fixed top-0 w-full z-50 transition-colors duration-300 ${
-          isScrolled ? "bg-white text-black" : "bg-transparent text-white"
+          searchOn || isScrolled
+            ? "bg-white text-black"
+            : "bg-transparent text-white"
         }`}
       >
         <div
           className={`px-16 flex flex-row items-center justify-between h-1/2 w-full ${
-            isScrolled ? "py-6 shadow-lg" : "py-10 mt-5"
+            searchOn || isScrolled ? "py-6 shadow-lg" : "py-10 mt-5"
           }`}
         >
           {/* Logo */}
-          <a href="/">
-            <img
-              className="w-1/5"
-              src={isScrolled ? sedisegoLogoDark : sedisegoLogoLight}
-              alt="Sedisego Logo"
-            />
-          </a>
+          {!searchOn && (
+            <a href="/">
+              <img
+                className="w-1/5"
+                src={isScrolled ? sedisegoLogoDark : sedisegoLogoLight}
+                alt="Sedisego Logo"
+              />
+            </a>
+          )}
 
           <nav>
             {/* Hamburger menu */}
@@ -76,13 +85,16 @@ export default function Header({ showOpaque = false }) {
                   </svg>
                 </div>
                 <ul className="MENU-LINK-MOBILE-OPEN flex flex-col items-center justify-between min-h-[250px]">
-                  <li className="border-b border-gray-400 my-8 uppercase">
+                  <li>
+                    <CiSearch />
+                  </li>
+                  <li className="my-8 uppercase">
                     <a href="/about">SALE</a>
                   </li>
-                  <li className="border-b border-gray-400 my-8 uppercase">
+                  <li className="my-8 uppercase">
                     <a href="/portfolio">PROJECTS</a>
                   </li>
-                  <li className="border-b border-gray-400 my-8 uppercase">
+                  <li className="my-8 uppercase">
                     <a href="/contact">Contact</a>
                   </li>
                 </ul>
@@ -90,18 +102,45 @@ export default function Header({ showOpaque = false }) {
             </section>
 
             {/* Navbar */}
-            <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-              <li>
-                <a href="/about">SALE</a>
-              </li>
-              <li>
-                <a href="/portfolio">PROJECTS</a>
-              </li>
-              <li>
-                <a href="/contact">SERVICES</a>
-              </li>
-            </ul>
+            {!searchOn && (
+              <ul className="DESKTOP-MENU hidden space-x-8 lg:flex items-center">
+                <li>
+                  <a href="/about">SALE</a>
+                </li>
+                <li>
+                  <a href="/portfolio">PROJECTS</a>
+                </li>
+                <li>
+                  <a href="/contact">SERVICES</a>
+                </li>
+                <li>
+                  <CiSearch
+                    onClick={() => setSearchOn(true)}
+                    size={20}
+                    className="cursor-pointer"
+                  />
+                </li>
+                <li>
+                  <LuUser2 size={20} className="cursor-pointer" />
+                </li>
+
+                <li>
+                  <SlBag size={20} className="cursor-pointer" />
+                </li>
+              </ul>
+            )}
           </nav>
+          {searchOn && (
+            <div className="flex flex-row items-center w-full px-10 py-3">
+              <CiSearch size={20} className="cursor-pointer" />
+              <input className="border-b-2 flex-grow mx-2" type="text" />
+              <IoClose
+                size={20}
+                className="cursor-pointer"
+                onClick={() => setSearchOn(false)}
+              />
+            </div>
+          )}
         </div>
       </div>
 
