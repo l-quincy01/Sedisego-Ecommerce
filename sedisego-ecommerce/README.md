@@ -8,6 +8,7 @@ Hand crafted interior design furniture design goods.
 <img src="/sedisego-ecommerce/sedisego-ecommerce/screenshots/1.png" width="25%" >
 <img src="/sedisego-ecommerce/screenshots/2.png" width="25%" >
 <img src="/sedisego-ecommerce/screenshots/3.png" width="25%" >
+<img src="/sedisego-ecommerce/screenshots/12.png" width="25%" >
 <img src="/sedisego-ecommerce/screenshots/4.png" width="25%" >
 <img src="/sedisego-ecommerce/screenshots/5.png" width="25%" >
 <img src="/sedisego-ecommerce/screenshots/6.png" width="25%" >
