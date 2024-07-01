@@ -1,6 +1,6 @@
 # Sedisego-Ecommerce
 
-Hand crafted interior design furniture design goods.
+Bespoke hand-crafted furniture goods
 
 ## Screenshots
 
